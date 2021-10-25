@@ -1,0 +1,36 @@
+<script>
+
+
+
+var textoMayuscula = prompt("ingresa");
+console.log(textoMayuscula);
+
+    let letra = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y z"];
+    let nuevo = "";    
+    for (var i = 0; i < textoMayuscula.length; i++)
+    {
+        var verificacion = true
+        for(var a = 0;a < letra.length; a++){
+
+
+            if (textoMayuscula[i] == letra[a]) {
+
+                verificacion = false;
+                
+            }
+        }
+        if (verificacion == true) {
+            nuevo += textoMayuscula[i];
+        }else{
+            nuevo += "";
+            
+        }
+    }
+   
+
+
+
+console.log(nuevo);
+
+
+</script>

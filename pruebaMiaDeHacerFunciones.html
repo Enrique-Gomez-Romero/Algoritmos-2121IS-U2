@@ -1,0 +1,54 @@
+<script>
+    
+var numero1,numero2 = 0;
+var resultado;
+var selecciona = prompt("Selecciona una opcion"+'\n'+"suma"+'\n'+"resta"+'\n'+"multi"+'\n'+"divi");
+numero1 = parseInt(prompt("ingresa un numero"));
+numero2 = parseInt(prompt("ingresa un numero"));
+switch (selecciona) {
+    case "suma":
+        nsuma(resultado);
+    break;
+    case "resta":
+        nresta(resultado);
+    break;
+    case "multi":
+        nmulti(resultado);
+    break;
+    case "divi":
+        ndivi(resultado);
+    break;
+
+    default:
+    break;
+}
+
+console.log(resultado);
+
+function nsuma(n1,n2) {
+    n1=numero1;
+    n2=numero2;
+    resultado=n1+n2;
+    return resultado;
+}
+function nresta(n1,n2) {
+    n1=numero1
+    n2=numero2
+    resultado=n1-n2;
+    return resultado;   
+}
+function nmulti(n1,n2) {
+    n1=numero1;
+    n2=numero2;
+    resultado=n1*n2;
+    return resultado;    
+}
+function ndivi(params) {
+    n1=numero1;
+    n2=numero2;
+    resultado=n1/n2;
+    return resultado;    
+}
+
+
+</script>

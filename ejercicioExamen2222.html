@@ -1,0 +1,60 @@
+<script>
+var nombre,matricula,grupo,sexoH,sexoM,sexo,calificacion,alumno,nSeleccion,nAlumnos;
+
+
+
+
+nSeleccion = parseInt(prompt("ingresa el numero de la opcion que quieres realizar"));
+
+switch (nSeleccion) {
+    case 1:
+    registroAlumno();
+        break;
+    case 2:
+    calcular(); 
+        break;
+
+    default:
+        break;
+}
+
+function calcular() { 
+    
+    console.log(nAlumnos);
+        
+}
+    
+   
+
+function registroAlumno() {
+    nAlumnos = prompt("ingresa el numero de alumnos que quieres ingresar");
+    nombre = [];
+    matricula =[];
+    grupo = [];
+    sexoH = [];
+    sexoM = [];
+    sexo = [];
+    calificacion = [];
+    alumno = [];
+    for(let i = 1;i <= nAlumnos;i++){
+        console.log("registro "+[i]);
+        let ingresaNombre = prompt("Ingresa El Nombre del Alumno "+[i]);
+        nombre.push(ingresaNombre);
+        let ingresaMatricula = alert("La Matricula Generada es "+' '+[i]);
+        matricula.push(i);
+        let ingresaGrupo = prompt("Ingresa a que Grupo lo quieres meter");
+        grupo.push(ingresaGrupo);
+        let ingresaSexo = prompt("ingresa el sexo"+'\n'+"H: Hombre"+'\n'+"M: Mujer");
+        sexo.push(ingresaSexo);
+        if (sexo == "H") {
+            sexoH.push(ingresaSexo);
+        }else{
+            sexoM.push(ingresaSexo);
+        }
+        let ingresaCalificacion = prompt("Ingresa calificacion"); 
+        calificacion.push(ingresaCalificacion);
+}  
+    return nombre,matricula,grupo,sexo,calificacion,nAlumnos;
+}
+
+</script>

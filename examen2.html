@@ -1,0 +1,66 @@
+<script>
+    var reservasion = [];
+    var fechareserva = [];
+    var mesa=[];
+    var registro = [];
+        do {
+            var opcion = parseInt(prompt("Que desea Realizar\n1.-Registrar Reservasion\n2.-Buscar Mesas Ocupadas Por Dia\n4.-Salir"));
+
+            switch (opcion) {
+                case 1:
+                    var reservasiones = prompt("Ingresa la cantidad de mesas a reservar");
+                    registrar();
+                        
+                    break;
+                    case 2:
+                        buscar();
+                    break;
+                }
+        } while (opcion != 4);
+
+
+function registrar() {
+
+    for(let i = 0; i < reservasiones; i++){
+        var nombre = prompt("Ingresa el nombre de quien reserva");
+        var fecha = parseInt(prompt("Ingresa la fecha: "));
+        let contador = 0;
+        mesa.push("Mesa" + i+1);
+        reservasion.push(nombre);
+        fechareserva.push(fecha);
+        console.log(reservasion);
+        console.log(fechareserva);
+        for(let i = 0; i < fechareserva.length; i++){
+            if(fechareserva[i] === fecha){
+            contador++;       
+            }
+        }
+        if (contador < 6) {
+        console.log("Mesas Del " +contador+ " a 6 disponibles De la Fecha "+fecha);
+        }else{
+        console.log("No hay mas mesas disponibles para esta fecha: "+fecha);
+        }
+    }
+
+}
+
+function buscar() {
+    var fechabusqueda = parseInt(prompt("Ingrese la fecha"))
+    let contador = 0;
+    for(let i = 0; i < fechareserva.length; i++){
+        if(fechareserva[i] === fechabusqueda){
+            contador++;
+        }
+    }  
+    console.log("Numero De Mesas Ocupadas "+contador+ " De La Fecha: "+fechabusqueda);
+
+    if (contador < 6) {
+        console.log("Mesas Del "+contador+" a 6 disponibles");
+    }else{
+        console.log("No hay mesas disponibles");
+    }
+}
+
+
+
+</script>

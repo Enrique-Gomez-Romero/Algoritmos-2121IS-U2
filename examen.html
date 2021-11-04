@@ -1,0 +1,190 @@
+<script>
+    var reservasion = [];
+    var base_de_datos = [];
+    var sinMesa = [];
+    var mesa1 = [];
+    var mesa2 = [];
+    var mesa3 = [];
+    var mesa4 = [];
+    var mesa5 = [];
+    var mesa6 = []; 
+ 
+    do{
+        opcion = parseInt(prompt("Que deseas realizar?\n1.-Registrar reservasion\n2.-Reservaciones\n3.-Mesas del dia"));
+    
+        switch (opcion) {
+            case 1:
+            noOcupadas();
+                var num_reservasiones = parseInt(prompt("Cuantas mesas se reservaran? "));
+                Registro();
+                break;
+            case 2:
+                verificador();
+                break;
+                
+             case 3:
+                 mesasDisponibles();
+                break;
+            default:
+                break;
+        }
+    }while(opcion != 0);
+    
+    function Registro(){
+        if(num_reservasiones <= 6){        
+        for(let i=0;i < num_reservasiones;i++){
+            let nombre = prompt("Ingresa El Nombre");
+            let fecha = prompt("Ingresa la Fecha");
+            let mesa = ("Mesa "+ (i + 1));
+            reservasion=[nombre,fecha,mesa];
+            base_de_datos.push(reservasion);
+                if (mesa == "Mesa 1")
+                {
+                    mesa1.push(reservasion);
+                }
+                if(mesa == "Mesa 2")
+                {
+                    mesa2.push(reservasion);
+                }
+                if(mesa == "Mesa 3")
+                {
+                    mesa3.push(reservasion);
+                }
+                if (mesa == "Mesa 4")
+                {
+                    mesa4.push(reservasion);
+                }
+                if(mesa == "Mesa 5")
+                {
+                    mesa5.push(reservasion);
+                }
+                if(mesa == "Mesa 6")
+                {
+                    mesa6.push(reservasion);
+                }
+            
+            }
+
+        }else{
+            alert("No tenemos tantas mesas")
+        }
+        return "Mesas registradas";   
+    }
+
+    function verificador() {
+        verificar = true;
+        if (verificar == mesa1.includes(base_de_datos[0] )) {
+            console.log("mesa ocupada 1");
+            console.log(base_de_datos[0]);
+        }
+        if (verificar == mesa2.includes(base_de_datos[1] )) {
+            console.log("mesa ocupada 2");
+            console.log(base_de_datos[1]);
+        }
+        if (verificar == mesa3.includes(base_de_datos[2] )) {
+            console.log("mesa ocupada 3");
+            console.log(base_de_datos[2]);
+        }
+        if (verificar == mesa4.includes(base_de_datos[3] )) {
+            console.log("mesa ocupada 4");
+            console.log(base_de_datos[3]);
+        }
+        if (verificar == mesa5.includes(base_de_datos[4] )) {
+            console.log("mesa ocupada 5");
+            console.log(base_de_datos[4]);
+        }
+        if (verificar == mesa6.includes(base_de_datos[5] )) {
+            console.log("mesa ocupada 6");
+            console.log(base_de_datos[5]);
+        }
+        return verificar;
+    }
+
+    function mesasDisponibles(nombre,fecha,mesa) {
+            verificar = false;
+        if (verificar == mesa1.includes(base_de_datos[0] )) {
+            console.log("mesa desocupada 1");
+        }
+        if (verificar == mesa2.includes(base_de_datos[1] )) {
+            console.log("mesa desocupada 2");
+        }
+        if (verificar == mesa3.includes(base_de_datos[2] )) {
+            console.log("mesa desocupada 3");
+        }
+        if (verificar == mesa4.includes(base_de_datos[3] )) {
+            console.log("mesa desocupada 4");
+        }
+        if (verificar == mesa5.includes(base_de_datos[4] )) {
+            console.log("mesa desocupada 5");
+        }
+        if (verificar == mesa6.includes(base_de_datos[5] )) {
+            console.log("mesa desocupada 6");
+        }
+    }
+
+
+    function ver() {
+    for(let i = 0; i < sinMesa.length; i++){
+            verificar = true;
+        if (verificar == mesa1.includes(sinMesa[0] )) {
+            console.log("mesa ocupada 1");
+        }
+        if (verificar == mesa2.includes(sinMesa[1] )) {
+            console.log("mesa ocupada 2");
+        }
+        if (verificar == mesa3.includes(sinMesa[2] )) {
+            console.log("mesa ocupada 3");
+        }
+        if (verificar == mesa4.includes(sinMesa[3] )) {
+            console.log("mesa ocupada 4");
+        }
+        if (verificar == mesa5.includes(sinMesa[4] )) {
+            console.log("mesa ocupada 5");
+        }
+        if (verificar == mesa6.includes(sinMesa[5] )) {
+            console.log("mesa ocupada 6");
+        }
+    }
+}
+
+    function noOcupadas() {
+        verificar = false;
+        if (verificar == mesa1.includes(base_de_datos[0] )) {
+            console.log("mesa desocupada 1");
+        }else{
+            console.log("mesa ocupada 1");
+        }
+
+        if (verificar == mesa2.includes(base_de_datos[1] )) {
+            console.log("mesa desocupada 2");
+        }else{
+            console.log("mesa ocupada 1");
+        }
+
+        if (verificar == mesa3.includes(base_de_datos[2] )) {
+            console.log("mesa desocupada 3");
+        }else{
+            console.log("mesa ocupada 3");
+        }
+
+        if (verificar == mesa4.includes(base_de_datos[3] )) {
+            console.log("mesa desocupada 4");
+        }else{
+            console.log("mesa ocupada 4");
+        }
+
+        if (verificar == mesa5.includes(base_de_datos[4] )) {
+            console.log("mesa desocupada 5");
+        }else{
+            console.log("mesa ocupada 5");
+        }
+
+        if (verificar == mesa6.includes(base_de_datos[5] )) {
+            console.log("mesa desocupada 6");
+        }else{
+            console.log("mesa ocupada 6");
+        }
+
+        return verificar;   
+    }
+</script>
